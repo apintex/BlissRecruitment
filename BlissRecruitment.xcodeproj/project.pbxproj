@@ -12,6 +12,7 @@
 		33653E781E9EDFD5007523F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33653E761E9EDFD5007523F7 /* Main.storyboard */; };
 		33653E7A1E9EDFD5007523F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33653E791E9EDFD5007523F7 /* Assets.xcassets */; };
 		33653E7D1E9EDFD5007523F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33653E7B1E9EDFD5007523F7 /* LaunchScreen.storyboard */; };
+		DD38971E972327B19977C0DC /* Pods_BlissRecruitment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B1C45F783D42C779F0D516 /* Pods_BlissRecruitment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		33653E791E9EDFD5007523F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33653E7C1E9EDFD5007523F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33653E7E1E9EDFD5007523F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18080658C00F2D597F90E7F /* Pods-BlissRecruitment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlissRecruitment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlissRecruitment/Pods-BlissRecruitment.debug.xcconfig"; sourceTree = "<group>"; };
+		E6B1C45F783D42C779F0D516 /* Pods_BlissRecruitment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlissRecruitment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC705D9983D6E95B84BD113B /* Pods-BlissRecruitment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlissRecruitment.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlissRecruitment/Pods-BlissRecruitment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD38971E972327B19977C0DC /* Pods_BlissRecruitment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A40259DF194E52166B63906 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6B1C45F783D42C779F0D516 /* Pods_BlissRecruitment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		33653E661E9EDFD5007523F7 = {
 			isa = PBXGroup;
 			children = (
 				33653E711E9EDFD5007523F7 /* BlissRecruitment */,
 				33653E701E9EDFD5007523F7 /* Products */,
+				4010C26C10EFDD6C33A87288 /* Pods */,
+				2A40259DF194E52166B63906 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +69,39 @@
 		33653E711E9EDFD5007523F7 /* BlissRecruitment */ = {
 			isa = PBXGroup;
 			children = (
+				339FCB391E9F6BC800DB84C3 /* Assets */,
+				339FCB381E9F6BB500DB84C3 /* StoryBoards */,
 				33653E721E9EDFD5007523F7 /* AppDelegate.swift */,
 				33653E741E9EDFD5007523F7 /* ViewController.swift */,
-				33653E761E9EDFD5007523F7 /* Main.storyboard */,
-				33653E791E9EDFD5007523F7 /* Assets.xcassets */,
-				33653E7B1E9EDFD5007523F7 /* LaunchScreen.storyboard */,
 				33653E7E1E9EDFD5007523F7 /* Info.plist */,
 			);
 			path = BlissRecruitment;
+			sourceTree = "<group>";
+		};
+		339FCB381E9F6BB500DB84C3 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				33653E791E9EDFD5007523F7 /* Assets.xcassets */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		339FCB391E9F6BC800DB84C3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				33653E761E9EDFD5007523F7 /* Main.storyboard */,
+				33653E7B1E9EDFD5007523F7 /* LaunchScreen.storyboard */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		4010C26C10EFDD6C33A87288 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E18080658C00F2D597F90E7F /* Pods-BlissRecruitment.debug.xcconfig */,
+				EC705D9983D6E95B84BD113B /* Pods-BlissRecruitment.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +111,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33653E811E9EDFD5007523F7 /* Build configuration list for PBXNativeTarget "BlissRecruitment" */;
 			buildPhases = (
+				49F4D9B8DA6B9173CE5CD666 /* [CP] Check Pods Manifest.lock */,
 				33653E6B1E9EDFD5007523F7 /* Sources */,
 				33653E6C1E9EDFD5007523F7 /* Frameworks */,
 				33653E6D1E9EDFD5007523F7 /* Resources */,
+				67FD8E857DDB744EDAEBB548 /* [CP] Embed Pods Frameworks */,
+				1BBF5413A5D62F86CEB8B6F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +174,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BBF5413A5D62F86CEB8B6F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlissRecruitment/Pods-BlissRecruitment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49F4D9B8DA6B9173CE5CD666 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		67FD8E857DDB744EDAEBB548 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlissRecruitment/Pods-BlissRecruitment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		33653E6B1E9EDFD5007523F7 /* Sources */ = {
@@ -261,6 +352,7 @@
 		};
 		33653E821E9EDFD5007523F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E18080658C00F2D597F90E7F /* Pods-BlissRecruitment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HJJH9TQH4B;
@@ -274,6 +366,7 @@
 		};
 		33653E831E9EDFD5007523F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC705D9983D6E95B84BD113B /* Pods-BlissRecruitment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HJJH9TQH4B;
@@ -304,6 +397,7 @@
 				33653E831E9EDFD5007523F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

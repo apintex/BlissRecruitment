@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwifterSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#0076FF")
+        UINavigationBar.appearance().tintColor = UIColor(hexString: "#FFFFFF")
+        UINavigationBar.appearance().barTintColor = UIColor(hexString: "#0076FF")
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        
+        UINavigationBar.appearance().shadowColor = UIColor(hexString: "#3c3c3c")
+        UINavigationBar.appearance().shadowOffset = CGSize.zero
+        UINavigationBar.appearance().shadowRadius = 5.0
+        UINavigationBar.appearance().shadowOpacity = 1.0
         return true
     }
 
