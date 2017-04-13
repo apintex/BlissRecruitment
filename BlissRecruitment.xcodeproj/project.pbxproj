@@ -12,6 +12,8 @@
 		33653E781E9EDFD5007523F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33653E761E9EDFD5007523F7 /* Main.storyboard */; };
 		33653E7A1E9EDFD5007523F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33653E791E9EDFD5007523F7 /* Assets.xcassets */; };
 		33653E7D1E9EDFD5007523F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33653E7B1E9EDFD5007523F7 /* LaunchScreen.storyboard */; };
+		339FCB3D1E9F7B3E00DB84C3 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB3C1E9F7B3D00DB84C3 /* LoadingScreenViewController.swift */; };
+		339FCB401E9F994700DB84C3 /* HealthBlissAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB3F1E9F994700DB84C3 /* HealthBlissAPI.swift */; };
 		DD38971E972327B19977C0DC /* Pods_BlissRecruitment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B1C45F783D42C779F0D516 /* Pods_BlissRecruitment.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		33653E791E9EDFD5007523F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33653E7C1E9EDFD5007523F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33653E7E1E9EDFD5007523F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		339FCB3C1E9F7B3D00DB84C3 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
+		339FCB3F1E9F994700DB84C3 /* HealthBlissAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBlissAPI.swift; sourceTree = "<group>"; };
 		E18080658C00F2D597F90E7F /* Pods-BlissRecruitment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlissRecruitment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlissRecruitment/Pods-BlissRecruitment.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B1C45F783D42C779F0D516 /* Pods_BlissRecruitment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlissRecruitment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC705D9983D6E95B84BD113B /* Pods-BlissRecruitment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlissRecruitment.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlissRecruitment/Pods-BlissRecruitment.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 		33653E711E9EDFD5007523F7 /* BlissRecruitment */ = {
 			isa = PBXGroup;
 			children = (
+				339FCB3B1E9F7AFF00DB84C3 /* Controllers */,
+				339FCB3A1E9F7AB600DB84C3 /* Models */,
 				339FCB391E9F6BC800DB84C3 /* Assets */,
 				339FCB381E9F6BB500DB84C3 /* StoryBoards */,
 				33653E721E9EDFD5007523F7 /* AppDelegate.swift */,
@@ -81,7 +87,8 @@
 		339FCB381E9F6BB500DB84C3 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				33653E791E9EDFD5007523F7 /* Assets.xcassets */,
+				33653E7B1E9EDFD5007523F7 /* LaunchScreen.storyboard */,
+				33653E761E9EDFD5007523F7 /* Main.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -89,10 +96,25 @@
 		339FCB391E9F6BC800DB84C3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				33653E761E9EDFD5007523F7 /* Main.storyboard */,
-				33653E7B1E9EDFD5007523F7 /* LaunchScreen.storyboard */,
+				33653E791E9EDFD5007523F7 /* Assets.xcassets */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		339FCB3A1E9F7AB600DB84C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				339FCB3F1E9F994700DB84C3 /* HealthBlissAPI.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		339FCB3B1E9F7AFF00DB84C3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				339FCB3C1E9F7B3D00DB84C3 /* LoadingScreenViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		4010C26C10EFDD6C33A87288 /* Pods */ = {
@@ -228,8 +250,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339FCB401E9F994700DB84C3 /* HealthBlissAPI.swift in Sources */,
 				33653E751E9EDFD5007523F7 /* ViewController.swift in Sources */,
 				33653E731E9EDFD5007523F7 /* AppDelegate.swift in Sources */,
+				339FCB3D1E9F7B3E00DB84C3 /* LoadingScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

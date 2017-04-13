@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Loading Screen View Controller-->
         <scene sceneID="Ycp-GQ-gxS">
             <objects>
-                <viewController id="DTv-pe-fDn" sceneMemberID="viewController">
+                <viewController id="DTv-pe-fDn" customClass="LoadingScreenViewController" customModule="BlissRecruitment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hvP-GS-3lp"/>
                         <viewControllerLayoutGuide type="bottom" id="s2C-Ij-q2f"/>
@@ -52,12 +53,74 @@
                     <view key="view" contentMode="scaleToFill" id="fbO-Yg-Nbs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQz-t5-bPU" customClass="KDLoadingView" customModule="KDLoadingView">
+                                <rect key="frame" x="157" y="303" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                        <color key="value" red="0.2392156869" green="0.67450982329999998" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                        <color key="value" red="0.21960784489999999" green="0.0078431377190000002" blue="0.85490196939999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="thirdColor">
+                                        <color key="value" red="0.80784314869999996" green="0.027450980619999999" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hidesWhenStopped" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fxD-gT-v9k">
+                                <rect key="frame" x="56" y="98" width="265.5" height="72"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bliss Applications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYi-7C-JXR">
+                                        <rect key="frame" x="0.0" y="0.0" width="265.5" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="AwH-g8-6H3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recruitment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vda-bu-35h">
+                                        <rect key="frame" x="86" y="51" width="93.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Gzw-3M-YOR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vda-bu-35h" firstAttribute="leading" secondItem="fxD-gT-v9k" secondAttribute="leading" constant="86" id="aha-Oj-3Zb"/>
+                                    <constraint firstItem="GYi-7C-JXR" firstAttribute="leading" secondItem="fxD-gT-v9k" secondAttribute="leading" id="eR2-mu-qeK"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.26274509800000001" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hQz-t5-bPU" firstAttribute="top" secondItem="hvP-GS-3lp" secondAttribute="bottom" constant="283" id="2xL-jp-fkE"/>
+                            <constraint firstItem="fxD-gT-v9k" firstAttribute="leading" secondItem="fbO-Yg-Nbs" secondAttribute="leadingMargin" constant="40" id="CMC-hc-cox"/>
+                            <constraint firstItem="hQz-t5-bPU" firstAttribute="leading" secondItem="fbO-Yg-Nbs" secondAttribute="leading" constant="157" id="L0C-cy-beV"/>
+                            <constraint firstItem="fxD-gT-v9k" firstAttribute="top" secondItem="hvP-GS-3lp" secondAttribute="bottom" constant="78" id="iGg-vW-fp7"/>
+                            <constraint firstItem="hQz-t5-bPU" firstAttribute="centerX" secondItem="fbO-Yg-Nbs" secondAttribute="centerX" id="rTT-OF-UfO"/>
+                            <constraint firstItem="hQz-t5-bPU" firstAttribute="centerY" secondItem="fbO-Yg-Nbs" secondAttribute="centerY" id="v0H-vh-4ZD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadingView" destination="hQz-t5-bPU" id="V9z-ku-z8q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y94-Mw-fOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-719" y="124"/>
+            <point key="canvasLocation" x="-719.20000000000005" y="123.68815592203899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XKB-25-8RD">
