@@ -116,12 +116,6 @@ class LoadingScreenViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-//        let destinationViewController = segue.destination
-//        if let LoadingScreenViewController = destinationViewController as? LoadingScreenViewController,
-//            let identifier = segue.identifier {
-//                
-//            }
-//        }
     }
  
 
