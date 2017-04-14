@@ -14,6 +14,7 @@
 		33653E7D1E9EDFD5007523F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33653E7B1E9EDFD5007523F7 /* LaunchScreen.storyboard */; };
 		339FCB3D1E9F7B3E00DB84C3 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB3C1E9F7B3D00DB84C3 /* LoadingScreenViewController.swift */; };
 		339FCB401E9F994700DB84C3 /* HealthBlissAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB3F1E9F994700DB84C3 /* HealthBlissAPI.swift */; };
+		339FCB441EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB431EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift */; };
 		DD38971E972327B19977C0DC /* Pods_BlissRecruitment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B1C45F783D42C779F0D516 /* Pods_BlissRecruitment.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		33653E7E1E9EDFD5007523F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		339FCB3C1E9F7B3D00DB84C3 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		339FCB3F1E9F994700DB84C3 /* HealthBlissAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBlissAPI.swift; sourceTree = "<group>"; };
+		339FCB431EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsListScreenTableViewController.swift; sourceTree = "<group>"; };
 		E18080658C00F2D597F90E7F /* Pods-BlissRecruitment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlissRecruitment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlissRecruitment/Pods-BlissRecruitment.debug.xcconfig"; sourceTree = "<group>"; };
 		E6B1C45F783D42C779F0D516 /* Pods_BlissRecruitment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlissRecruitment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC705D9983D6E95B84BD113B /* Pods-BlissRecruitment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlissRecruitment.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlissRecruitment/Pods-BlissRecruitment.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		33653E711E9EDFD5007523F7 /* BlissRecruitment */ = {
 			isa = PBXGroup;
 			children = (
+				339FCB451EA0313F00DB84C3 /* Classes */,
 				339FCB3B1E9F7AFF00DB84C3 /* Controllers */,
 				339FCB3A1E9F7AB600DB84C3 /* Models */,
 				339FCB391E9F6BC800DB84C3 /* Assets */,
@@ -112,9 +115,33 @@
 		339FCB3B1E9F7AFF00DB84C3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				339FCB3C1E9F7B3D00DB84C3 /* LoadingScreenViewController.swift */,
+				339FCB411E9FFF8000DB84C3 /* LoadingScreen */,
+				339FCB421EA0001800DB84C3 /* QuestionsListScreen */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		339FCB411E9FFF8000DB84C3 /* LoadingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				339FCB3C1E9F7B3D00DB84C3 /* LoadingScreenViewController.swift */,
+			);
+			name = LoadingScreen;
+			sourceTree = "<group>";
+		};
+		339FCB421EA0001800DB84C3 /* QuestionsListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				339FCB431EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift */,
+			);
+			name = QuestionsListScreen;
+			sourceTree = "<group>";
+		};
+		339FCB451EA0313F00DB84C3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		4010C26C10EFDD6C33A87288 /* Pods */ = {
@@ -251,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				339FCB401E9F994700DB84C3 /* HealthBlissAPI.swift in Sources */,
+				339FCB441EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift in Sources */,
 				33653E751E9EDFD5007523F7 /* ViewController.swift in Sources */,
 				33653E731E9EDFD5007523F7 /* AppDelegate.swift in Sources */,
 				339FCB3D1E9F7B3E00DB84C3 /* LoadingScreenViewController.swift in Sources */,
