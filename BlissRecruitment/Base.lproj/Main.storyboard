@@ -5,25 +5,67 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Questions-->
         <scene sceneID="BTw-kC-vG0">
             <objects>
                 <tableViewController storyboardIdentifier="QuestionsListScreenVC" id="Crn-jk-rLe" customClass="QuestionsListScreenTableViewController" customModule="BlissRecruitment" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jbs-oB-YNz">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="jbs-oB-YNz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yun-C4-k6N">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="70" id="yun-C4-k6N" customClass="QuestionsListScreenTableViewCell" customModule="BlissRecruitment" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yun-C4-k6N" id="J7o-7o-t84">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nCS-Ot-a6Y">
+                                            <rect key="frame" x="25" y="5.5" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="2az-uM-i1Z"/>
+                                                <constraint firstAttribute="height" constant="60" id="pFR-6s-fWt"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uky-yM-uPh">
+                                            <rect key="frame" x="93" y="25" width="241" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="publishedAt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATB-mV-IOJ">
+                                            <rect key="frame" x="234" y="8" width="100" height="12"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="g3V-Qq-bKL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="uky-yM-uPh" firstAttribute="leading" secondItem="nCS-Ot-a6Y" secondAttribute="trailing" constant="8" id="3zU-Pc-J5n"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uky-yM-uPh" secondAttribute="trailing" id="CeA-It-Vp4"/>
+                                        <constraint firstItem="nCS-Ot-a6Y" firstAttribute="centerY" secondItem="J7o-7o-t84" secondAttribute="centerY" id="KU3-zf-DTV"/>
+                                        <constraint firstItem="nCS-Ot-a6Y" firstAttribute="leading" secondItem="J7o-7o-t84" secondAttribute="leadingMargin" constant="17" id="Wj1-Zq-RMr"/>
+                                        <constraint firstItem="uky-yM-uPh" firstAttribute="centerY" secondItem="J7o-7o-t84" secondAttribute="centerY" id="pA1-eE-bsm"/>
+                                        <constraint firstAttribute="topMargin" secondItem="ATB-mV-IOJ" secondAttribute="top" id="t6r-8z-bpn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ATB-mV-IOJ" secondAttribute="trailing" id="xca-qi-zbg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="imgQuestion" destination="nCS-Ot-a6Y" id="wWM-PL-vnd"/>
+                                    <outlet property="lbPublishedAt" destination="ATB-mV-IOJ" id="Yig-Vo-xgr"/>
+                                    <outlet property="lbQuestion" destination="uky-yM-uPh" id="K5s-Rs-4uW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -31,11 +73,11 @@
                             <outlet property="delegate" destination="Crn-jk-rLe" id="jM5-RR-VvL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Dce-55-QpG"/>
+                    <navigationItem key="navigationItem" title="Questions" id="Dce-55-QpG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIr-20-cOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1202" y="125"/>
+            <point key="canvasLocation" x="1200.8" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sV9-E2-w4C">
@@ -119,16 +161,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Kzb-QJ-vVR">
-                                <rect key="frame" x="129" y="301" width="118" height="65.5"/>
+                                <rect key="frame" x="164" y="301" width="47.5" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLA-It-ykp">
-                                        <rect key="frame" x="35" y="0.0" width="47.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vK-AA-QXX">
-                                        <rect key="frame" x="0.0" y="35.5" width="118" height="30"/>
+                                        <rect key="frame" x="-35" y="20.5" width="118" height="0.0"/>
                                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Try Connection..."/>
                                         <userDefinedRuntimeAttributes>

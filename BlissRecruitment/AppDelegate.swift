@@ -15,9 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var externalOpenQuery:String? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setupNavBar()
+        
+        return true
+    }
+
+    func setupNavBar() {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#0076FF")
         UINavigationBar.appearance().tintColor = UIColor(hexString: "#FFFFFF")
         UINavigationBar.appearance().barTintColor = UIColor(hexString: "#0076FF")
@@ -27,15 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().shadowOffset = CGSize.zero
         UINavigationBar.appearance().shadowRadius = 5.0
         UINavigationBar.appearance().shadowOpacity = 1.0
-        return true
+        
+        UISearchBar.appearance().barTintColor = UIColor(hexString: "#0076FF")
+        UISearchBar.appearance().tintColor = UIColor.white
     }
-
 
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        print(String(describing: url))
-        print(url.absoluteString)
-        print(url.query ?? "")
+        
+        externalOpenQuery = url.query ?? ""
         
         return true
     }

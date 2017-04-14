@@ -12,6 +12,7 @@
 		33653E781E9EDFD5007523F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33653E761E9EDFD5007523F7 /* Main.storyboard */; };
 		33653E7A1E9EDFD5007523F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33653E791E9EDFD5007523F7 /* Assets.xcassets */; };
 		33653E7D1E9EDFD5007523F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33653E7B1E9EDFD5007523F7 /* LaunchScreen.storyboard */; };
+		3393D8261EA1519B00D8C7B7 /* QuestionsListScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3393D8251EA1519B00D8C7B7 /* QuestionsListScreenTableViewCell.swift */; };
 		339FCB3D1E9F7B3E00DB84C3 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB3C1E9F7B3D00DB84C3 /* LoadingScreenViewController.swift */; };
 		339FCB401E9F994700DB84C3 /* HealthBlissAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB3F1E9F994700DB84C3 /* HealthBlissAPI.swift */; };
 		339FCB441EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB431EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift */; };
@@ -27,6 +28,7 @@
 		33653E791E9EDFD5007523F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33653E7C1E9EDFD5007523F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33653E7E1E9EDFD5007523F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3393D8251EA1519B00D8C7B7 /* QuestionsListScreenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsListScreenTableViewCell.swift; sourceTree = "<group>"; };
 		339FCB3C1E9F7B3D00DB84C3 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		339FCB3F1E9F994700DB84C3 /* HealthBlissAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBlissAPI.swift; sourceTree = "<group>"; };
 		339FCB431EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsListScreenTableViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				339FCB431EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift */,
+				3393D8251EA1519B00D8C7B7 /* QuestionsListScreenTableViewCell.swift */,
 			);
 			name = QuestionsListScreen;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				339FCB401E9F994700DB84C3 /* HealthBlissAPI.swift in Sources */,
+				3393D8261EA1519B00D8C7B7 /* QuestionsListScreenTableViewCell.swift in Sources */,
 				339FCB441EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift in Sources */,
 				33653E751E9EDFD5007523F7 /* ViewController.swift in Sources */,
 				339FCB491EA0BC1600DB84C3 /* Questions.swift in Sources */,

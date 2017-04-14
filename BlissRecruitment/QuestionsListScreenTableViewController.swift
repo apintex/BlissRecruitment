@@ -8,11 +8,17 @@
 
 import UIKit
 import Alamofire
+import ChameleonFramework
 
 
 class QuestionsListScreenTableViewController: UITableViewController {
 
+    let colors:[UIColor] = [HexColor("FFFFFF")!, HexColor("C2DEFF")!]
+    
     var dArrayQuestions = [questions]()
+    var filteredQuestions = [questions]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +29,25 @@ class QuestionsListScreenTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        importQuestionsData2(limit: 10, offset: 0)
+        setUpView()
+        
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        // Setup the Scope Bar
+        searchController.searchBar.scopeButtonTitles = ["All"]
+        tableView.tableHeaderView = searchController.searchBar
+        
+        importQuestionsData(limit: 10, offset: 0)
+    }
+
+    func setUpView() {
+        self.navigationItem.title = "Distâncias"
+        //view.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
+        view.backgroundColor = UIColor(hexString: "#FFFFFF")
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,47 +57,14 @@ class QuestionsListScreenTableViewController: UITableViewController {
     }
  
     
-    
-    func importQuestionsData(limit:Int, offset:Int) {
-        
-        let url:String = "https://private-bbbe9-blissrecruitmentapi.apiary-mock.com/questions?" + String(limit) + "&" + String(offset)
-        
-        //let userInitiatedQueue = DispatchQueue.global(qos: .userInitiated)
-        Alamofire.request(url).validate().responseJSON() { response in
-        //Alamofire.request(url).validate().responseJSON(queue: userInitiatedQueue) { response in
-
-            switch response.result {
-            case .success:
-                
-                let jsonResult = try? JSONSerialization.jsonObject(with: response.data!, options:JSONSerialization.ReadingOptions.mutableContainers)
-                //dump(jsonResult)
-                //print(jsonResult.unwrapped(or: Int()))
-                //print(jsonResult.debugDescription)
-                for chave in jsonResult as! NSDictionary{
-                    print(chave)
-                }
-                
-                
-//                let status:String = jsonResult["id"] as! String
-//                print("Valor status: \(status )")
-//                print(jsonResult["id"])
-                
-//                addQuestion(qId: Int(jsonResult["id"]),
-//                            qQuestion: jsonResult["question"],
-//                            qImageUrl: jsonResult["image_utl"],
-//                            qThumbURL: jsonResult["thumb_url"],
-//                            qPublishedAt: jsonResult["published_at"],
-//                            qChoices: jsonResult["choices"])
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        let ext = AppDelegate()
+        print(ext.externalOpenQuery ?? "INTERNAL")
     }
     
-    func importQuestionsData2(limit:Int, offset:Int) {
-        let url = URL(string: "https://private-bbbe9-blissrecruitmentapi.apiary-mock.com/questions?10&0")
+    func importQuestionsData(limit:Int, offset:Int) {
+        let urlString:String = "https://private-bbbe9-blissrecruitmentapi.apiary-mock.com/questions?" + String(limit) + "&" + String(offset)
+        let url = URL(string: urlString)
         
         // Load Data
         let data = try! Data(contentsOf: url!)
@@ -134,24 +125,50 @@ class QuestionsListScreenTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredQuestions.count
+        }
+        return dArrayQuestions.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath) as! QuestionsListScreenTableViewCell
 
+        let quest:questions
+        
+        cell.backgroundColor = UIColor.clear
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            quest = filteredQuestions[indexPath.row]
+        } else {
+            quest = dArrayQuestions[indexPath.row]
+        }
+        
         // Configure the cell...
+//        cell.lbQuestion.text = dArrayQuestions[indexPath.row].qQuestion
+//        cell.lbPublishedAt.text = String(describing: dArrayQuestions[indexPath.row].qPublishedAt)
 
+        cell.lbQuestion.text = quest.qQuestion
+        cell.lbPublishedAt.text = String(describing: quest.qPublishedAt)
+
+        
         return cell
     }
-    */
+ 
 
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredQuestions = dArrayQuestions.filter({( quest : questions) -> Bool in
+            //let categoryMatch = (quest.qQuestion == scope)
+            //return categoryMatch && quest.qQuestion.lowercased().contains(searchText.lowercased())
+            return quest.qQuestion.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -197,6 +214,22 @@ class QuestionsListScreenTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension QuestionsListScreenTableViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+
+extension QuestionsListScreenTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
 }
 
 extension DateFormatter {

@@ -9,5 +9,6 @@ target 'BlissRecruitment' do
   pod 'Alamofire', '~> 4.4'
   pod 'SwifterSwift'
   pod 'KDLoadingView', '~> 1.0.0'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
 end

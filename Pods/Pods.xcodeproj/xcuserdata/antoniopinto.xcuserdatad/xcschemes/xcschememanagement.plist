@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KDLoadingView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>07B1F34BFE37DB226F313B387F370525</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4495CD0FA2320F42DCCA2DD36024C36A</key>
+		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90B41A4DAD212BA097846E1C0E28C82F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE38FD84BFE7CE900C9F80CF42579BA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
