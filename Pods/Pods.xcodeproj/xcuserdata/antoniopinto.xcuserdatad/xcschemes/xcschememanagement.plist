@@ -14,7 +14,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FLAnimatedImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KDLoadingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PINCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PINRemoteImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,7 +47,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1CDD7AA0CFB861B433C92F585CFD4C5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44D45BA2B1DDCA3181332F2DC991B901</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6A4878A4A87B118BAF0877A103373708</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83B5B60C676A8D31829A6AE91CE86A75</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,12 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>90B41A4DAD212BA097846E1C0E28C82F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE38FD84BFE7CE900C9F80CF42579BA0</key>
+		<key>A02EE1452A6B9ED8895E739554320B81</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -10,5 +10,6 @@ target 'BlissRecruitment' do
   pod 'SwifterSwift'
   pod 'KDLoadingView', '~> 1.0.0'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'PINRemoteImage'
 
 end

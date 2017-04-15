@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import ChameleonFramework
+import PINRemoteImage
+import PINCache
 
 
 class QuestionsListScreenTableViewController: UITableViewController {
@@ -102,24 +104,14 @@ class QuestionsListScreenTableViewController: UITableViewController {
     }
     
     
-    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
-        URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            completion(data, response, error)
-            }.resume()
-    }
+//    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+//        URLSession.shared.dataTask(with: url) {
+//            (data, response, error) in
+//            completion(data, response, error)
+//            }.resume()
+//    }
     
-    func downloadImage(url: URL) {
-        print("Download Started")
-        getDataFromUrl(url: url) { (data, response, error)  in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            DispatchQueue.main.async() { () -> Void in
-                self.imageView.image = UIImage(data: data)
-            }
-        }
-    }
+
     
     
     
@@ -160,19 +152,11 @@ class QuestionsListScreenTableViewController: UITableViewController {
         cell.lbId.text = String(quest.qId)
         cell.lbPublishedAt.text = String(describing: quest.qPublishedAt)
         
-//        if let checkedUrl = URL(string: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png") {
-//            //imageView.contentMode = .scaleAspectFit
-//            downloadImage(url: checkedUrl)
-//        }
-
-        if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
-            //imageView.contentMode = .scaleAspectFit
-            //imageView.image = image
-            cell.imgQuestion.image = image
-        }
-
-        cell.imgQuestion.image = UIImageView.imageFromServerURL("https://dummyimage.com/120x120/000/fff.png")
-
+        let imageUrlString = quest.qThumbURL
+        
+        //"https://dummyimage.com/120x120/000/fff.png"
+        cell.imgQuestion.imageFromServerURL(urlString: imageUrlString, defaultImage: nil)
+        
         return cell
     }
  
