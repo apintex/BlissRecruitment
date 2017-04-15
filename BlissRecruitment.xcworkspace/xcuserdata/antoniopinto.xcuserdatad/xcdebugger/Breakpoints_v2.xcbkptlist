@@ -26,45 +26,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlissRecruitment/QuestionsListScreenTableViewController.swift"
-            timestampString = "513895999.519835"
+            timestampString = "513974793.889796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "didReceiveMemoryWarning()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlissRecruitment/LoadingScreenViewController.swift"
+            timestampString = "513958702.768905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "callHealthService()"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BlissRecruitment.QuestionsListScreenTableViewController.viewDidAppear (Swift.Bool) -&gt; ()"
+                  symbolName = "BlissRecruitment.LoadingScreenViewController.callHealthService () -&gt; ()"
                   moduleName = "BlissRecruitment"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/antoniopinto/Documents/XcodeProjects/BlissRecruitment/BlissRecruitment/QuestionsListScreenTableViewController.swift"
-                  timestampString = "513889184.521069"
+                  urlString = "file:///Users/antoniopinto/Documents/XcodeProjects/BlissRecruitment/BlissRecruitment/LoadingScreenViewController.swift"
+                  timestampString = "513958704.375828"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "51">
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "773">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BlissRecruitment.QuestionsListScreenTableViewController.(viewDidAppear (Swift.Bool) -&gt; ()).(implicit closure #1)"
+                  symbolName = "BlissRecruitment.LoadingScreenViewController.(callHealthService () -&gt; ()).(closure #1)"
                   moduleName = "BlissRecruitment"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/antoniopinto/Documents/XcodeProjects/BlissRecruitment/BlissRecruitment/QuestionsListScreenTableViewController.swift"
-                  timestampString = "513889184.522685"
+                  urlString = "file:///Users/antoniopinto/Documents/XcodeProjects/BlissRecruitment/BlissRecruitment/LoadingScreenViewController.swift"
+                  timestampString = "513958704.377321"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "12">
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlissRecruitment/LoadingScreenViewController.swift"
+            timestampString = "513958702.768905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "callHealthService()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

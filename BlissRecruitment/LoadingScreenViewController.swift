@@ -45,13 +45,17 @@ class LoadingScreenViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         checkInternetAndServices()
-        
     }
     
     func checkInternetAndServices() {
         
         setHidenStatusOfButton(true)
+        
+        loadingView.setNeedsLayout()
         
         //Check internet connection
         if currentReachabilityStatus != .notReachable {
@@ -69,7 +73,10 @@ class LoadingScreenViewController: UIViewController {
     func callHealthService() {
         
         //Start animation spinner
-        loadingView.startAnimating()
+        if !loadingView.isAnimating {
+            self.loadingView.startAnimating()
+        }
+        
         lbStatus.text = "Checking internet and services..."
         
         //let utilityQueue = DispatchQueue.global(qos: .userInitiated)

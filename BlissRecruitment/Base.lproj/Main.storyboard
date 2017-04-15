@@ -193,7 +193,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Kzb-QJ-vVR">
-                                <rect key="frame" x="164" y="301" width="47.5" height="20.5"/>
+                                <rect key="frame" x="164.5" y="301" width="47.5" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLA-It-ykp">
                                         <rect key="frame" x="0.0" y="0.0" width="47.5" height="20.5"/>

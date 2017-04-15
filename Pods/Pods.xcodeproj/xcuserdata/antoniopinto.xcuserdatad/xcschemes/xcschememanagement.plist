@@ -14,27 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FLAnimatedImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>KDLoadingView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PINCache.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PINRemoteImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-BlissRecruitment.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReachabilitySwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,17 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1CDD7AA0CFB861B433C92F585CFD4C5D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>44D45BA2B1DDCA3181332F2DC991B901</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6A4878A4A87B118BAF0877A103373708</key>
+		<key>30FB68770BA677001BBCCD1BFBB5881E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,17 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83B5B60C676A8D31829A6AE91CE86A75</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A02EE1452A6B9ED8895E739554320B81</key>
+		<key>98EEB05052C590F7538BF03CC35456AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99358E3897FA8BC97A22DDAC14C94649</key>
 		<dict>
 			<key>primary</key>
 			<true/>

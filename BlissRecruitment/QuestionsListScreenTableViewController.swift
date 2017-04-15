@@ -9,11 +9,12 @@
 import UIKit
 import Alamofire
 import ChameleonFramework
-import PINRemoteImage
-import PINCache
+import ReachabilitySwift
 
 
 class QuestionsListScreenTableViewController: UITableViewController {
+
+    let reachability = Reachability()!
 
     let colors:[UIColor] = [HexColor("FFFFFF")!, HexColor("C2DEFF")!]
     
@@ -21,6 +22,13 @@ class QuestionsListScreenTableViewController: UITableViewController {
     var filteredQuestions = [questions]()
     
     let searchController = UISearchController(searchResultsController: nil)
+    
+    deinit {
+//        reachability.stopNotifier()
+//        NSNotificationCenter.defaultCenter().removeObserver(self,
+//                                                            name: ReachabilityChangedNotification,
+//                                                            object: reachability)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +52,36 @@ class QuestionsListScreenTableViewController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         
         importQuestionsData(limit: 10, offset: 0)
+        
+        reachability.whenReachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+            DispatchQueue.main.async {
+                if reachability.isReachableViaWiFi {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+                LoadingIndicatorView.hide()
+            }
+        }
+        reachability.whenUnreachable = { reachability in
+            // this is called on a background thread, but UI updates must
+            // be on the main thread, like this:
+            DispatchQueue.main.async {
+                print("Not reachable")
+                LoadingIndicatorView.show("Connection lost! Wating signal...")
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+        
+
     }
 
     func setUpView() {
@@ -58,10 +96,15 @@ class QuestionsListScreenTableViewController: UITableViewController {
         
     }
  
+    override func viewWillAppear(_ animated: Bool) {
+        let ext = AppDelegate()
+        print(ext.externalOpenQuery ?? "INTERNAL_Will")
+    }
+
     
     override func viewDidAppear(_ animated: Bool) {
         let ext = AppDelegate()
-        print(ext.externalOpenQuery ?? "INTERNAL")
+        print(ext.externalOpenQuery ?? "INTERNAL_Did")
     }
     
     func importQuestionsData(limit:Int, offset:Int) {
@@ -153,8 +196,6 @@ class QuestionsListScreenTableViewController: UITableViewController {
         cell.lbPublishedAt.text = String(describing: quest.qPublishedAt)
         
         let imageUrlString = quest.qThumbURL
-        
-        //"https://dummyimage.com/120x120/000/fff.png"
         cell.imgQuestion.imageFromServerURL(urlString: imageUrlString, defaultImage: nil)
         
         return cell
