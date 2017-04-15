@@ -38,7 +38,7 @@ class QuestionsListScreenTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         
         // Setup the Scope Bar
-        searchController.searchBar.scopeButtonTitles = ["All"]
+        searchController.searchBar.scopeButtonTitles = ["All","Cat1","Cat2"]
         tableView.tableHeaderView = searchController.searchBar
         
         importQuestionsData(limit: 10, offset: 0)
@@ -73,25 +73,13 @@ class QuestionsListScreenTableViewController: UITableViewController {
         let jsonResults = try! JSONSerialization.jsonObject(with: data, options: [])
         for i in 0..<(jsonResults as AnyObject).count {
             let obj = (jsonResults as AnyObject)[i] as! NSDictionary
-//            print(obj["id"] as! Int)
-//            print(obj["question"] as! String)
-//            print(obj["image_url"] as! String)
-//            print(obj["thumb_url"] as! String)
-//            print(obj["published_at"] as! String)
     
             let dateFormatter = DateFormatter()
             // TODO: implement dateFromSwapiString
             let publishedAt = dateFormatter.date(fromSwapiString: obj["published_at"] as! String)
-            print(String(describing: publishedAt))
-            
             
             let choices = obj["choices"] as! NSArray
-//            for c in 0..<choices.count {
-//                let obj:NSDictionary = choices[c] as! NSDictionary
-//                print(obj["choice"]!)
-//                print(obj["votes"]!)
-//            }
-            
+
             addQuestion(qId: obj["id"] as! Int,
                         qQuestion: obj["question"] as! String,
                         qImageUrl: obj["image_url"] as! String,
@@ -114,6 +102,24 @@ class QuestionsListScreenTableViewController: UITableViewController {
     }
     
     
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { (data, response, error)  in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { () -> Void in
+                self.imageView.image = UIImage(data: data)
+            }
+        }
+    }
     
     
     
@@ -150,13 +156,23 @@ class QuestionsListScreenTableViewController: UITableViewController {
         }
         
         // Configure the cell...
-//        cell.lbQuestion.text = dArrayQuestions[indexPath.row].qQuestion
-//        cell.lbPublishedAt.text = String(describing: dArrayQuestions[indexPath.row].qPublishedAt)
-
         cell.lbQuestion.text = quest.qQuestion
+        cell.lbId.text = String(quest.qId)
         cell.lbPublishedAt.text = String(describing: quest.qPublishedAt)
-
         
+//        if let checkedUrl = URL(string: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png") {
+//            //imageView.contentMode = .scaleAspectFit
+//            downloadImage(url: checkedUrl)
+//        }
+
+        if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
+            //imageView.contentMode = .scaleAspectFit
+            //imageView.image = image
+            cell.imgQuestion.image = image
+        }
+
+        cell.imgQuestion.image = UIImageView.imageFromServerURL("https://dummyimage.com/120x120/000/fff.png")
+
         return cell
     }
  
@@ -169,50 +185,34 @@ class QuestionsListScreenTableViewController: UITableViewController {
         })
         tableView.reloadData()
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                
+                let quest:questions
+                
+                if searchController.isActive && searchController.searchBar.text != "" {
+                    quest = filteredQuestions[indexPath.row]
+                } else {
+                    quest = dArrayQuestions[indexPath.row]
+                }
+                
+                let controller = (segue.destination as! UINavigationController).topViewController as! DetailsScreenViewController
+                
+                controller.detailQuestion = quest
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
-    */
+ 
 
 }
 
@@ -229,6 +229,27 @@ extension QuestionsListScreenTableViewController: UISearchResultsUpdating {
         let searchBar = searchController.searchBar
         let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
         filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+extension UIImageView {
+    public func imageFromServerURL(urlString: String, defaultImage : String?) {
+        if let di = defaultImage {
+            self.image = UIImage(named: di)
+        }
+        
+        URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
+            
+            if error != nil {
+                print(error ?? "error")
+                return
+            }
+            DispatchQueue.main.async(execute: { () -> Void in
+                let image = UIImage(data: data!)
+                self.image = image
+            })
+            
+        }).resume()
     }
 }
 

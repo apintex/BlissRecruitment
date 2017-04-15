@@ -13,6 +13,7 @@ class QuestionsListScreenTableViewCell: UITableViewCell {
     @IBOutlet weak var imgQuestion: UIImageView!
     @IBOutlet weak var lbQuestion: UILabel!
     @IBOutlet weak var lbPublishedAt: UILabel!
+    @IBOutlet weak var lbId: UILabel!
     
     
     
