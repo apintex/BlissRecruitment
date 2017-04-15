@@ -18,6 +18,7 @@
 		339FCB401E9F994700DB84C3 /* HealthBlissAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB3F1E9F994700DB84C3 /* HealthBlissAPI.swift */; };
 		339FCB441EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB431EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift */; };
 		339FCB491EA0BC1600DB84C3 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339FCB481EA0BC1600DB84C3 /* Questions.swift */; };
+		33BD41A81EA2B28B004505B5 /* DetailsScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BD41A71EA2B28B004505B5 /* DetailsScreenTableViewCell.swift */; };
 		33FBAAF01EA25A93006F5A6F /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBAAEF1EA25A93006F5A6F /* LoadingIndicatorView.swift */; };
 		33FBAAF21EA26142006F5A6F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBAAF11EA26142006F5A6F /* Network.swift */; };
 		B52D4630684331B4E6481D2A /* Pods_BlissRecruitment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12087BFD348AFCEA3EB9484 /* Pods_BlissRecruitment.framework */; };
@@ -38,6 +39,7 @@
 		339FCB3F1E9F994700DB84C3 /* HealthBlissAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBlissAPI.swift; sourceTree = "<group>"; };
 		339FCB431EA02CF700DB84C3 /* QuestionsListScreenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsListScreenTableViewController.swift; sourceTree = "<group>"; };
 		339FCB481EA0BC1600DB84C3 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		33BD41A71EA2B28B004505B5 /* DetailsScreenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsScreenTableViewCell.swift; sourceTree = "<group>"; };
 		33FBAAEF1EA25A93006F5A6F /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		33FBAAF11EA26142006F5A6F /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		8CBAACE07966D73571233B4A /* Pods-BlissRecruitment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlissRecruitment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlissRecruitment/Pods-BlissRecruitment.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				3393D8281EA1897A00D8C7B7 /* DetailsScreenViewController.swift */,
+				33BD41A71EA2B28B004505B5 /* DetailsScreenTableViewCell.swift */,
 			);
 			name = DetailScreen;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33BD41A81EA2B28B004505B5 /* DetailsScreenTableViewCell.swift in Sources */,
 				33FBAAF21EA26142006F5A6F /* Network.swift in Sources */,
 				339FCB401E9F994700DB84C3 /* HealthBlissAPI.swift in Sources */,
 				3393D8261EA1519B00D8C7B7 /* QuestionsListScreenTableViewCell.swift in Sources */,
