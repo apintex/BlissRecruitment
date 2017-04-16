@@ -12,7 +12,6 @@ class DetailsScreenTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lbChoice: UILabel!
     @IBOutlet weak var lbVotes: UILabel!
-    @IBOutlet weak var btVote: UIButton!
     
     
     override func awakeFromNib() {
@@ -26,7 +25,5 @@ class DetailsScreenTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func onVoteClick(_ sender: UIButton) {
-        print("increment vote")
-    }
+    
 }

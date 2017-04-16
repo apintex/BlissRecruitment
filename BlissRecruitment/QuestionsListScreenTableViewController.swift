@@ -85,7 +85,7 @@ class QuestionsListScreenTableViewController: UITableViewController {
     }
 
     func setUpView() {
-        self.navigationItem.title = "Distâncias"
+        self.navigationItem.title = "Questions"
         //view.backgroundColor = GradientColor(.topToBottom, frame: view.frame, colors: colors)
         view.backgroundColor = UIColor(hexString: "#FFFFFF")
     }
@@ -231,9 +231,13 @@ class QuestionsListScreenTableViewController: UITableViewController {
                 
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailsScreenViewController
                 
+                //let myConfBeaconVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailsScreenViewController
+                //myConfBeaconVC.detailQuestion = quest
+                //navigationController?.pushViewController(myConfBeaconVC, animated: true)
+                
                 controller.detailQuestion = quest
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+//                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+//                controller.navigationItem.leftItemsSupplementBackButton = false
             }
         }
     }
@@ -278,12 +282,5 @@ extension UIImageView {
     }
 }
 
-extension DateFormatter {
-    func date(fromSwapiString dateString: String) -> Date? {
-        // SWAPI dates look like: "2014-12-10T16:44:31.486000Z"
-        self.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SZ"
-        self.timeZone = TimeZone(abbreviation: "UTC")
-        self.locale = Locale(identifier: "en_US_POSIX")
-        return self.date(from: dateString)
-    }
-}
+
+
