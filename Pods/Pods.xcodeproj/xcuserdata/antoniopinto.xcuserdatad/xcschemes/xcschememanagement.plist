@@ -9,12 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KDLoadingView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-BlissRecruitment.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReachabilitySwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,17 +37,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>07B1F34BFE37DB226F313B387F370525</key>
+		<key>30FB68770BA677001BBCCD1BFBB5881E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4495CD0FA2320F42DCCA2DD36024C36A</key>
+		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98EEB05052C590F7538BF03CC35456AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99358E3897FA8BC97A22DDAC14C94649</key>
 		<dict>
 			<key>primary</key>
 			<true/>
